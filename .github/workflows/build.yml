@@ -7,4 +7,5 @@ jobs:
     steps:
       - name: Get remote nodeinfo
         run: curl -sLS https://faasd.exit.o6s.io/function/nodeinfo
-
+      - name: debug
+        run: sleep 120
