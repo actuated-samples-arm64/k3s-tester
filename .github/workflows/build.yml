@@ -18,3 +18,4 @@ jobs:
 #          $HOME/.arkade/bin/k3sup install --local
       - name: debug
         run: sleep 240
+
