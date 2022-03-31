@@ -1,0 +1,10 @@
+name: build
+
+on: push
+jobs:
+  my-job:
+    runs-on: self-hosted
+    steps:
+      - name: Get remote nodeinfo
+        run: curl -sLS https://faasd.exit.o6s.io/function/nodeinfo
+
