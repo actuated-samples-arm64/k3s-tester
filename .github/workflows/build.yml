@@ -7,5 +7,13 @@ jobs:
     steps:
       - name: Get remote nodeinfo
         run: curl -sLS https://faasd.exit.o6s.io/function/nodeinfo
+      - name: Check K3s
+        run: |
+          curl -sLS "https://github.com/k3s-io/k3s/releases/download/v1.23.4%2Bk3s1/k3s-arm64" -o k3s
+          chmod +x ./k3s
+          ./k3s check-config || :
+      - name: modprobe
+        run: |
+          modprobe netfilter || :
       - name: debug
-        run: sleep 120
+        run: sleep 240
