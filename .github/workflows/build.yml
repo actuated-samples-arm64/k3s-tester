@@ -5,8 +5,16 @@ jobs:
   my-job:
     runs-on: self-hosted
     steps:
-      - name: Get remote nodeinfo
-        run: curl -sLS https://faasd.exit.o6s.io/function/nodeinfo
+      - name: Show uptime
+        run: uptime
+      - name: List CPUs
+        run: lscpu
+      - name: Show RAM
+        run: free -h
+      - name: Show disk
+        run: df -h /
+      - name: Show kernel
+        run: uname -a
       - name: Check K3s
         run: |
           curl -sLS "https://github.com/k3s-io/k3s/releases/download/v1.23.4%2Bk3s1/k3s-arm64" -o k3s
