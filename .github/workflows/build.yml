@@ -18,9 +18,9 @@ jobs:
           $HOME/.arkade/bin/k3sup install --local
       - name: Get k3s nodes
         run: | 
-          /usr/local/bin/k3s kubectl get nodes -o wide
+          sudo -E /usr/local/bin/k3s kubectl get nodes -o wide
       - name: Get pods
         run: | 
-          /usr/local/bin/k3s kubectl get pods -A -o wide
-#      - name: debug
-#        run: sleep 30
+          sudo -E /usr/local/bin/k3s kubectl get pods -A -o wide
+      - name: debug
+        run: sleep 120
