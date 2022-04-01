@@ -16,6 +16,9 @@ jobs:
         run: |
           arkade get k3sup
           $HOME/.arkade/bin/k3sup install --local
+      - name: Wait until CoreDNS is ready
+        run: |
+          sudo -E /usr/local/bin/k3s kubectl rollout status deploy/coredns -n kube-system --timeout=300s
       - name: Get k3s nodes
         run: | 
           sudo -E /usr/local/bin/k3s kubectl get nodes -o wide
