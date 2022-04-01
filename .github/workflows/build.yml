@@ -11,7 +11,7 @@ jobs:
         run: |
           curl -sLS "https://github.com/k3s-io/k3s/releases/download/v1.23.4%2Bk3s1/k3s-arm64" -o k3s
           chmod +x ./k3s
-          CONFIG=/boot/config-5.10.77/ ./k3s check-config || :
+          CONFIG=/lib/modules/5.10.77/.config ./k3s check-config || :
 #      - name: Install k3s
 #        run: |
 #          arkade get k3sup
