@@ -1,2 +1,2 @@
-# curl-bash
+# k3s-tester
 
