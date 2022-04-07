@@ -35,4 +35,3 @@ jobs:
           sudo -E /usr/local/bin/k3s kubectl get pods -A -o wide
       - name: debug
         run: sleep 120
-
